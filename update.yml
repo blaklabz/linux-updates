@@ -1,6 +1,9 @@
 ---
 - name: Upgrade and Reboot RHEL & Debian family Linux distros
   hosts: all
+  become: yes
+  become_user: root
+  become_method: sudo
   vars:
     reboot_connect_timeout: 5
     reboot_post_reboot_delay: 15
